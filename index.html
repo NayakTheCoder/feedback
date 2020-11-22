@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user response</title>
+    <style>
+        *{
+            text-align: center;
+            font-family: cursive;
+        }
+        .textarea{
+            text-align: left;
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Feedback</h1>
+    <br>
+    <br>
+    <div>
+        <textarea name="" class="textarea" placeholder="  Enter feedback pls !" onclick="myfunction()" id="" cols="40" rows="5"></textarea>
+        <br>
+        <button type="button" onclick="submit()">Submit</button>
+        <br>
+        <br>
+        <p id="para"></p>
+    </div>
+</body>
+<script>
+    let para = document.getElementById("para");
+    let text = document.querySelector("textarea");
+     window.onclick = function(e){
+         if(e.target.matches(".textarea")){ text.style.border = "5px solid green";}
+        else{
+            text.style.border = "5px solid red";
+        }
+     }
+     function submit(){
+         if(!text.value){
+             para.innerHTML = "Eh..pls add an input before submitting";
+         }
+         else{
+            para.innerHTML = "Thanks for the feedback ! we appreciate it !";
+            text.value = "";
+         }
+     }
+
+</script>
+</html>
